@@ -1,0 +1,13 @@
+# Created by https://www.gitignore.io/api/eclipse
+
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+.settings/
+.project
+.externalToolBuilders/
+.classpath
