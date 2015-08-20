@@ -9,17 +9,18 @@ import java.util.List;
 
 public class WordBreak {
 
-	public static void breakingWords(String word, List<String> list) {
-		System.out.print("The word is: " + word + ". 'WORD - BREAK': ");
+	public static void breakingWords(String word, List<String> list, int k) {
+
+		// System.out.print("The word is: " + word + ". 'WORD - BREAK': ");
 		for (int i = 1; i < word.length(); i++) {
 			for (String word1 : list) {
-				if (word.substring(0, i).equals(word1)) {
-					for (String word2 : list) {
-						if (word.substring(i, word.length()).equals(word2)) {
-							System.out.print(word1 + " " + word2);
-					}
-					}
+				if (k + i <= word.length() && word.substring(k, i + k).equals(word1)) {
+
+					System.out.println(word.substring(k, i + k));
+					breakingWords(word, list, i + k);
+
 				}
+
 			}
 		}
 	}
@@ -42,7 +43,7 @@ public class WordBreak {
 		}
 		System.out.println("\n");
 
-		breakingWords("applepie", list);
+		breakingWords("applepiecake", list, 0);
 
 		br.close();
 
